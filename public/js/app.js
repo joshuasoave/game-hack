@@ -42,7 +42,7 @@ function preload ()
   this.load.image('background', './assets/example.png')
   this.load.image('character', './assets/idle01.png')
   this.load.image('enemy', './assets/hit02.png')
-  this.load.image('apple', './assets/item__64.png')
+  this.load.image('apple', './assets/item64.png')
 }
 
 function create ()
