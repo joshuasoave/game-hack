@@ -113,6 +113,7 @@ if (cursors.up.isDown)
   //////
   // console.log(player.x);
   // console.log(player.y);
+  //position of the apple
   if(475 < player.x < 478 && player.y <= 96){
     // console.log(
     //   'you win'
@@ -126,6 +127,7 @@ if (cursors.up.isDown)
   ///////
   //lose
   //////
+  //position of the apple
   if(475 < enemy.x < 478 && enemy.y <= 96){
     // console.log(
     //   'you lose'
