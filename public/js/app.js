@@ -74,7 +74,7 @@ function create ()
   ///
   this.physics.add.collider(
     player,
-    enemy
+    enemy,
   )
 
   //  Input Events
@@ -120,6 +120,8 @@ if (cursors.up.isDown)
     //win text
     this.add.text(100, 200, "You got the apple of immortality!").setScale(2)
     this.add.text(200, 300, "You win!").setScale(2)
+    //enemy destroyed
+    enemy.destroy()
   }
   ///////
   //lose
@@ -130,6 +132,10 @@ if (cursors.up.isDown)
     // );
     this.add.text(100, 200, "Oh no! The evil plague doctor got the apple!").setScale(1.5)
     this.add.text(400, 300, "You lose!").setScale(1.5)
+
+
+    //player destroyed
+    player.destroy()
   }
 }
 
