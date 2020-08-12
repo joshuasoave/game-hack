@@ -51,7 +51,7 @@ function create ()
   this.add.image(0, 380, 'background')
   // this.add.image(440, 150, 'apple').setScale(2)
 
-  const apple = this.physics.add.image(440, 150, 'apple').setScale(2)
+  const apple = this.physics.add.sprite(440, 150, 'apple').setScale(2)
   //to keep the apple in place
   apple.body.gravity.y = -800;
 
