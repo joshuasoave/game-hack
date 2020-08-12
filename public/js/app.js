@@ -1,3 +1,5 @@
+
+
 /////////
 //config
 ////////
@@ -112,17 +114,22 @@ if (cursors.up.isDown)
   // console.log(player.x);
   // console.log(player.y);
   if(475 < player.x < 478 && player.y <= 96){
-    console.log(
-      'you win'
-    );
+    // console.log(
+    //   'you win'
+    // );
+    //win text
+    this.add.text(100, 200, "You got the apple of immortality!").setScale(2)
+    this.add.text(200, 300, "You win!").setScale(2)
   }
   ///////
   //lose
   //////
   if(475 < enemy.x < 478 && enemy.y <= 96){
-    console.log(
-      'you lose'
-    );
+    // console.log(
+    //   'you lose'
+    // );
+    this.add.text(100, 200, "Oh no! The evil plague doctor got the apple").setScale(1.5)
+    this.add.text(400, 300, "You lose!").setScale(1.5)
   }
 }
 
