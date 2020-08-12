@@ -40,13 +40,18 @@ function preload ()
   this.load.image('background', './assets/example.png')
   this.load.image('character', './assets/idle01.png')
   this.load.image('enemy', './assets/hit02.png')
+  this.load.image('apple', './assets/item__64.png')
 }
 
 function create ()
 {
   //bg
   this.add.image(0, 380, 'background')
+  // this.add.image(440, 150, 'apple').setScale(2)
 
+  const apple = this.physics.add.image(440, 150, 'apple').setScale(2)
+  //to keep the apple in place
+  apple.body.gravity.y = -800;
 
   ////////
   //player
@@ -62,8 +67,13 @@ function create ()
   enemy.setBounce(0.2);
   enemy.setCollideWorldBounds(true);
 
-
-
+  /////
+  //collide
+  ///
+  this.physics.add.collider(
+    player,
+    enemy
+  )
 
   //  Input Events
   cursors = this.input.keyboard.createCursorKeys();
@@ -89,12 +99,16 @@ if (cursors.up.isDown)
     player.setVelocityY(-200);
   }
 
-//////
-//enemy
-////
-
+  //////
+  //enemy
+  ////
   enemy.setVelocityX(150 - Math.random() * 330)
   enemy.setVelocityY(150 - Math.random() * 400)
+
+
+  //////
+  ///win
+  //////
 }
 
 const game = new Phaser.Game(config);
