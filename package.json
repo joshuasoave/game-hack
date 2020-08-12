@@ -19,6 +19,7 @@
   "homepage": "https://github.com/joshuasoave/game-hack#readme",
   "dependencies": {
     "express": "^4.17.1",
-    "http-server": "^0.12.3"
+    "http-server": "^0.12.3",
+    "phaser": "^3.24.1"
   }
 }
