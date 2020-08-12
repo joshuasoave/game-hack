@@ -128,7 +128,7 @@ if (cursors.up.isDown)
     // console.log(
     //   'you lose'
     // );
-    this.add.text(100, 200, "Oh no! The evil plague doctor got the apple").setScale(1.5)
+    this.add.text(100, 200, "Oh no! The evil plague doctor got the apple!").setScale(1.5)
     this.add.text(400, 300, "You lose!").setScale(1.5)
   }
 }
