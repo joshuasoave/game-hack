@@ -13,7 +13,7 @@ const config = {
   physics: {
     default: "arcade",
     arcade: {
-      gravity: { y: 0, x: 0 },
+      gravity: { y: 800, x: 0 },
     },
   }
 };
@@ -44,17 +44,25 @@ function preload ()
 
 function create ()
 {
+  //bg
+  this.add.image(0, 380, 'background')
 
-  this.add.image(0, 300, 'background')
-
-  this.add.image(600, 610, 'enemy').setScale(3);
 
   ////////
   //player
   /////////
-  player = this.physics.add.image(300, 620, 'character').setScale(3);
+  player = this.physics.add.image(200, 800, 'character').setScale(3);
   player.setBounce(0.2);
   player.setCollideWorldBounds(true);
+
+  //////
+  //enemy
+  ////
+  enemy = this.physics.add.image(600, 800, 'enemy').setScale(3);
+  enemy.setBounce(0.2);
+  enemy.setCollideWorldBounds(true);
+
+
 
 
   //  Input Events
@@ -65,21 +73,28 @@ function update ()
 {
   if (cursors.left.isDown)
   {
-    player.setVelocityX(-160);
+    player.setVelocityX(-200);
   }
   else if (cursors.right.isDown)
   {
-    player.setVelocityX(160);
+    player.setVelocityX(200);
   }
   else
   {
     player.setVelocityX(0);
   }
 
-if (cursors.up.isDown && player.body.touching.down)
+if (cursors.up.isDown)
   {
-    player.setVelocityY(-330);
+    player.setVelocityY(-200);
   }
+
+//////
+//enemy
+////
+
+  enemy.setVelocityX(150 - Math.random() * 330)
+  enemy.setVelocityY(150 - Math.random() * 400)
 }
 
 const game = new Phaser.Game(config);
