@@ -56,14 +56,14 @@ function create ()
   ////////
   //player
   /////////
-  player = this.physics.add.image(200, 800, 'character').setScale(3);
+  player = this.physics.add.sprite(200, 800, 'character').setScale(3);
   player.setBounce(0.2);
   player.setCollideWorldBounds(true);
 
   //////
   //enemy
   ////
-  enemy = this.physics.add.image(600, 800, 'enemy').setScale(3);
+  enemy = this.physics.add.sprite(600, 800, 'enemy').setScale(3);
   enemy.setBounce(0.2);
   enemy.setCollideWorldBounds(true);
 
@@ -109,6 +109,21 @@ if (cursors.up.isDown)
   //////
   ///win
   //////
+  // console.log(player.x);
+  // console.log(player.y);
+  if(475 < player.x < 478 && player.y <= 96){
+    console.log(
+      'you win'
+    );
+  }
+  ///////
+  //lose
+  //////
+  if(475 < enemy.x < 478 && enemy.y <= 96){
+    console.log(
+      'you lose'
+    );
+  }
 }
 
 const game = new Phaser.Game(config);
